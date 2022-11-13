@@ -1,0 +1,21 @@
+<div>
+  <p
+    *ngFor="
+      let item of user
+        | paginate
+          : {
+              itemsPerPage: itemsPerPage,
+              currentPage: page,
+              totalItems: totalItems
+            }
+    "
+  >
+    {{ item.id }}
+    <span>{{ item.title }}</span> 
+    
+  </p>
+</div>
+<pagination-controls
+  class="pagi"
+  (pageChange)="gty(page = $event)"> 
+</pagination-controls>
